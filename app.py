@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import desc
 from sqlalchemy.sql import text
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 app.secret_key = "neartobull3216"
 
 db_name = 'nttb_answers.db'
