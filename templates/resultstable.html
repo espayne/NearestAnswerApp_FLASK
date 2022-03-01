@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Results</h1>
+    <br>
+    <h2>Answer: 272</h2>
+    <br>
+    <h2>and the loser is.........</h2>
+    <br>
+    {% for x in worstguess %}
+    <h1 class="winner">&#127942 {{x.name}} &#127942</h1>
+    {% endfor %}
+    <br>
+      <table class="table">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Guess</th>
+                  <th>|Difference|</th>
+              </tr>
+          </thead>
+          <!-- Loop to go through each guess -->
+          <tbody>
+              {% for guess in guesses %}
+            <tr>
+                <td>{{ guess.name }}</td>
+                <td>{{ guess.answer }}</td>
+                <td>{{ guess.absdiff }}</td>
+            </tr>
+            {% endfor %}
+            
+          </tbody>
+
+      </table>
+    <br>
+    <a href="{{ url_for('index') }}">Logout</a>
+
+</body>
+</html>

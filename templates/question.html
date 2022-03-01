@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Question</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+   <img src="https://raw.githubusercontent.com/espayne/app-images/main/question2-logo.png">
+    <form action="thank-you" method="post" autocomplete="off">
+        {% for message in get_flashed_messages() %}
+             <p>{{ message }}</p>
+         {% endfor %}
+        <br>
+        <input type="number" name="answer_input">
+        <br>
+        <input type="submit" value="SUBMIT" id="question">
+    </form>
+</body>
+</html>

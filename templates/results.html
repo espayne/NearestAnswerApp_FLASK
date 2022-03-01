@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Results login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+   <img src="https://raw.githubusercontent.com/espayne/app-images/main/front-logo.png">
+   <form action="" method="post" autocomplete="off">
+       <input type='text' placeholder='Username' name='username' value="{{request.form.username}}">
+       <input type='password' placeholder='Password' name='password' value="{{request.form.password}}">
+       <input class = "btn btn-default" type="submit" value="LOGIN" id="login">
+    </form>
+    {% if error %}
+       <p class="error"><strong>Error:</strong> {{error}}
+    {% endif%}
+
+</body>
+</html>
